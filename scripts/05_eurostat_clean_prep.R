@@ -40,8 +40,9 @@ df_grezzo <- df %>% select(pax)
 
 stargazer(as.data.frame(df_grezzo), type = "text", 
           title = "Statistiche Descrittive: Flussi Mensili per Rotta (Eurostat)",
-          covariate.labels = c("Passeggeri per Tratta/Mese (in migliaia)"),
-          digits = 0)
+          covariate.labels = c("Passeggeri per Tratta/Mese"),
+          digits = 0,
+          out = "output/tables/tabella_descrittiva_eurostat.txt")
 # INTERPRETAZIONE DEI RISULTATI DESCRITTIVI (N = 102.145):
 # - Media: 14 (14.000 passeggeri mensili per singola tratta).
 # - Deviazione Standard: 18 (18.000 passeggeri).
