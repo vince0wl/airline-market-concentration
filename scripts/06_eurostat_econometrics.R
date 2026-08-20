@@ -189,3 +189,9 @@ summary(model_cr2_eurostat_2)
 #   del vertice, redistribuendo temporaneamente il traffico sul resto del sistema
 # - dummy_alitalia_2017 non risulta statistica significativa: la crisi di Alitalia non ha indebolito il duopolio 
 #   di vertice, ma ha solo ridistribuito le quote interne tra vettori sulla medesima rotta 
+
+# Salva i modelli mensili Eurostat (con shock e CR2)
+stargazer(model_network, model_enhanced, model_cr2_eurostat_1, model_cr2_eurostat_2, type = "text",
+          title = "Modelli di Rete Mensili e Analisi di Robustezza (Eurostat)",
+          out = "output/tables/regressioni_network_mensile.txt")
+
