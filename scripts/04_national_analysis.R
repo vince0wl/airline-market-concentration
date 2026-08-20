@@ -114,3 +114,8 @@ coeftest(model_extended, vcov = NeweyWest(e, lag = 2))
 # - Nonostante la scarsità di osservazioni temporali (T = 10) che rischia di rendere singolare la matrice, l'applicazione dei pesi HAC conferma la
 # robustezza dei nostri parametri (Gini e nat_congestion)
 
+# Salva i modelli di concentrazione nazionale e robustezza
+stargazer(model_final, model_extended, model_robust, model_cr2, type = "text",
+          title = "Modelli di Concentrazione Nazionale e Robustezza (ENAC)",
+          out = "output/tables/regressioni_concentrazione_nazionale.txt")
+
