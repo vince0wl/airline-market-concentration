@@ -79,3 +79,9 @@ summary(model_share_interaction)
 #   Hub e poli Low-Cost sono mercati ormai "maturi" e la loro quota risponde in modo meno che 
 #   proporzionale a incrementi di traffico rispetto agli scali minori 
 
+# Salva una tabella comparativa di tutti i modelli di domanda passeggeri
+stargazer(model_fe, model_lag, model, model_interation, type = "text",
+          title = "Modelli Econometrici sulla Domanda (ENAC)",
+          out = "output/tables/regressioni_domanda_aeroporti.txt")
+
+
