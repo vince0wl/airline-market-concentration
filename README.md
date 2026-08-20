@@ -1,10 +1,10 @@
-# Analisi Empirica della Concentrazione e Polarizzazione del Settore Aereo Italiano (2010-2019) ✈️📊
+# Analisi Empirica della Concentrazione e Polarizzazione del Settore Aereo Italiano (2010-2019)
 
 Questo repository contiene il codice sorgente R e la metodologia statistica sviluppata per analizzare l'evoluzione competitiva e la struttura del network del trasporto aereo in Italia nel decennio precedente alla crisi pandemica.
 
 Lo studio mette a confronto due forze contrapposte: l'**effetto attrazione all'entrata** (che favorisce la deconcentrazione del mercato tramite l'espansione dei vettori Low-Cost) e l'**investimento strategico in capacità degli Hub** (che protegge la dominanza spaziale dei principali scali tramite la congestione e la saturazione delle frequenze).
 
-## 🔬 Metodologia Econometrica Implementata
+## Metodologia Econometrica Implementata
 
 I modelli si basano sulla letteratura dell'Economia Industriale (Sutton 1991, Demsetz 1973, Oliveira 2016). Nel codice sono state implementate le seguenti soluzioni statistiche:
 
@@ -18,7 +18,7 @@ I modelli si basano sulla letteratura dell'Economia Industriale (Sutton 1991, De
 
 4. **Coefficiente di Gini e Curva di Lorenz (ineq):** Utilizzati come indicatori di disuguaglianza spaziale per verificare il "Paradosso Italiano": la convivenza tra un calo della concentrazione media delle rotte (HHI) e una crescente polarizzazione del traffico effettivo su pochissimi poli dominanti (Hub e basi LCC).
 
-## 📦 Pacchetti R Utilizzati
+## Pacchetti R Utilizzati
 - `tidyverse` (dplyr, ggplot2, lubridate) per la pulizia e data manipulation
 - `plm` per la stima dei modelli econometrici su dati panel
 - `ineq` per il calcolo del Coefficiente di Gini e la Curva di Lorenz
