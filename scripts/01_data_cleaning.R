@@ -19,7 +19,7 @@ enac_m <- read_excel("data/raw/movimenti.xlsx")
 # Lo script legge la cartella, estrae l'anno a 4 cifre direttamente dal nome di ciascun file e unisce automaticamente tutti i
 # file storici in un unico grande dataset chiamato assa
 files <- list.files(
-  path = "data/raw/assaereoporti",
+  path = "data/raw/assaeroporti/",
   pattern = "*.xlsx",
   full.names = TRUE
 )
