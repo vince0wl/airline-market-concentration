@@ -189,4 +189,5 @@ data_grezza <- data %>% select(pax, movements, cargo)
 stargazer(as.data.frame(data_grezza), type = "text", 
           title = "Statistiche Descrittive: Dati Aeroportuali Annuali (2010-2019)",
           covariate.labels = c("Passeggeri Totali (pax)", "Movimenti Aerei (movements)", "Merci (cargo)"),
-          digits = 0) # Zero decimali per dati interi
+          digits = 0,
+          out = "output/tables/tabella_descrittiva_enac.txt")
