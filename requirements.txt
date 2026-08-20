@@ -1,0 +1,23 @@
+# ==============================================================================
+# REQUIREMENTS - Analisi Empirica della Concentrazione del Network Aereo Italiano
+# ==============================================================================
+# Questo file elenca i pacchetti R necessari per eseguire l'intero progetto.
+# Di seguito viene riportata la funzione di ciascuna libreria nel codice.
+
+# --- Manipolazione Dati e Grafica ---
+tidyverse==2.0.0      # Data manipulation (dplyr, tidyr, stringr) e grafici avanzati (ggplot2)
+lubridate==1.9.3      # Gestione e formattazione delle date mensili del dataset Eurostat
+readxl==1.4.3         # Importazione efficiente dei dataset storici in formato Excel (.xlsx)
+
+# --- Econometria e Modellazione ---
+plm==2.6-3            # Stima di modelli econometrici panel (Effetti Fissi Twoways / Within)
+
+# --- Misurazione della Concentrazione ---
+ineq==0.2-13          # Calcolo del Coefficiente di Gini e della Curva di Lorenz
+
+# --- Statistica Robusta e Test d'Inferenza ---
+sandwich==3.1-0       # Stimatori robusti della varianza-covarianza (Newey-West HAC)
+lmtest==0.9-40        # Test di significatività dei coefficienti (coeftest) con pesi HAC
+
+# --- Presentazione dei Risultati ---
+stargazer==5.2.3      # Formattazione professionale delle tabelle delle regressioni OLS e FE
