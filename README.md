@@ -1,26 +1,26 @@
-# Analisi Empirica della Concentrazione e Polarizzazione del Settore Aereo Italiano (2010-2019)
+# Empirical Analysis of Concentration and Polarization in the Italian Aviation Sector (2010 – 2019)
 
-Questo repository contiene il codice sorgente R e la metodologia statistica sviluppata per analizzare l'evoluzione competitiva e la struttura del network del trasporto aereo in Italia nel decennio precedente alla crisi pandemica.
+This repository contains the R source code and the statistical methodology developed to analyze the competitive evolution and network structure of air transport in Italy during the decade preceding the pandemic crisis.
 
-Lo studio mette a confronto due forze contrapposte: l'**effetto attrazione all'entrata** (che favorisce la deconcentrazione del mercato tramite l'espansione dei vettori Low-Cost) e l'**investimento strategico in capacità degli Hub** (che protegge la dominanza spaziale dei principali scali tramite la congestione e la saturazione delle frequenze).
+The study contrasts two opposing forces: the **attraction effect of market entry** (which fosters market de-concentration through the expansion of low-cost carriers) and **strategic investment in hub capacity** (which protects the spatial dominance of major airports through congestion and frequency saturation).
 
-## Metodologia Econometrica Implementata
+## Implemented Econometric Methodology
 
-I modelli si basano sulla letteratura dell'Economia Industriale (Sutton 1991, Demsetz 1973, Oliveira 2016). Nel codice sono state implementate le seguenti soluzioni statistiche:
+The models are grounded in the Industrial Economics literature (Sutton 1991, Demsetz 1973, Oliveira 2016). The following statistical solutions have been implemented in the code:
 
-1. **Trasformazione Logit delle Variabili Limitate (LDV):** Per modellare la quota di mercato (`share`) e l'indice di concentrazione (`HHI`), vincolati per definizione nell'intervallo (0,1), è stata applicata la trasformazione logit:
-   $$\text{logit}(HHI) = \ln\left(\frac{HHI}{1 - HHI}\right)$$
-   Ciò consente di mappare i dati sulla retta reale ed evitare stime distorte o previsioni teoricamente impossibili.
-   
-2. **Modelli Panel con Effetti Fissi Twoways (Within):** Utilizzati per catturare la variabilità interna (within-panel) controllando per le caratteristiche specifiche invarianti nel tempo dei singoli aeroporti (es. posizione geografica) e gli shock temporali comuni.
-   
-3. **Correzione di Newey-West (HAC - Heteroskedasticity and Autocorrelation Consistent):** Applicata sia con lag = 2 (per il dataset annuale ENAC) che con lag = 4 (per la serie storica mensile Eurostat) per garantire la validità scientifica dell'inferenza (p-value robusti) in presenza di eteroschedasticità e autocorrelazione dei residui.
+1. **Logit Transformation of Limited Dependent Variables (LDV):** To model market share (`share`) and the concentration index (`HHI`) — which are bounded by definition within the (0, 1) interval — a logit transformation was applied:
+$$\text{logit}(HHI) = \ln\left(\frac{HHI}{1 - HHI}\right)$$
+This allows the data to be mapped onto the real line, avoiding biased estimates or theoretically impossible predictions.
 
-4. **Coefficiente di Gini e Curva di Lorenz (ineq):** Utilizzati come indicatori di disuguaglianza spaziale per verificare il "Paradosso Italiano": la convivenza tra un calo della concentrazione media delle rotte (HHI) e una crescente polarizzazione del traffico effettivo su pochissimi poli dominanti (Hub e basi LCC).
+2. **Two-Way Fixed Effects (Within) Panel Models:** Used to capture within-panel variability while controlling for time-invariant specific characteristics of individual airports (e.g., geographical location) and common temporal shocks.
 
-## Pacchetti R Utilizzati
-- `tidyverse` (dplyr, ggplot2, lubridate) per la pulizia e data manipulation
-- `plm` per la stima dei modelli econometrici su dati panel
-- `ineq` per il calcolo del Coefficiente di Gini e la Curva di Lorenz
-- `sandwich` & `lmtest` per i test dei coefficienti con correzione di Newey-West (HAC)
-- `stargazer` per la formattazione professionale delle tabelle di regressione
+3. **Newey-West correction (HAC – Heteroskedasticity and Autocorrelation Consistent):** Applied with both lag = 2 (for the annual ENAC dataset) and lag = 4 (for the monthly Eurostat time series) to ensure the scientific validity of the inference (robust p-values) in the presence of heteroskedasticity and residual autocorrelation.
+
+4. **Gini coefficient and Lorenz curve (ineq):** Used as indicators of spatial inequality to examine the "Italian Paradox": the coexistence of a decline in average route concentration (HHI) and an increasing polarization of actual traffic around a very small number of dominant hubs (major hubs and LCC bases).
+
+## Used R Packages
+- `tidyverse` (dplyr, ggplot2, lubridate) for data cleaning and manipulation
+- `plm` for estimating econometric models on panel data
+- `ineq` for calculating the Gini coefficient and Lorenz curve
+- `sandwich` & `lmtest` for coefficient testing with Newey-West (HAC) correction
+- `stargazer` for professional formatting of regression tables
